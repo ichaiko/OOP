@@ -1,16 +1,18 @@
 package ru.nsu.chaiko.HeapSort;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
-import java.util.Random;
 import java.util.Arrays;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import java.util.Random;
 
 class MainTest {
     @Test
     void test() {
-        sample(new int[] {5, 4, 3, 2, 1}, new int[] {1, 2, 3, 4, 5});
-        sample(new int[] {8, 19, 2, 14, 2, 22, -2204, 523, 0, -117}, new int[] {-2204, -117, 0, 2, 2, 8, 14, 19, 22, 523});
-
+        int[] testArr = {5, 4, 3, 2, 1}, expected = {1, 2, 3, 4, 5};
+        sample(testArr, expected);
+        testArr = new int[] {8, 19, 2, 14, 2, 22, -2204, 0, -117};
+        expected = new int[] {-2204, -117, 0, 2, 2, 8, 14, 19, 22};
+        sample(testArr, expected);
     }
 
     void sample(int[] inputArr, int[] expectedArr) {
