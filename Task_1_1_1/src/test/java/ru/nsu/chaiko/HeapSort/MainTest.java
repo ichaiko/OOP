@@ -41,4 +41,12 @@ class MainTest {
         Assertions.assertArrayEquals(expectedArr, myArr);
     }
 
+    @Test
+    void heapSortEmptyArr() {
+        HeapSort heap = new HeapSort(new int[]{});
+        int[] myArr = heap.heapsort();
+        int[] expectedArr = {};
+        Assertions.assertArrayEquals(expectedArr, myArr);
+    }
+
 }

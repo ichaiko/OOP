@@ -19,7 +19,7 @@ class HeapSort {
     /**
      * swaps elements with specified indexes
      */
-    void swap(int ind1, int ind2) {
+    private void swap(int ind1, int ind2) {
         int temp = heap[ind1];
 
         heap[ind1] = heap[ind2];
@@ -30,7 +30,7 @@ class HeapSort {
      * siftUp push element up in heap if necessary
      */
 
-    void siftUp(int indOfVertex) {
+    private void siftUp(int indOfVertex) {
         int ancestor = (indOfVertex - 1) / 2;
 
         if (heap[indOfVertex] > heap[ancestor]) {
@@ -42,7 +42,7 @@ class HeapSort {
     /**
      * siftDown moves element down to restore heap after swapping
      */
-    void siftDown(int indOfVertex) {
+    private void siftDown(int indOfVertex) {
         int leftChild = 2 * indOfVertex + 1, rightChild = 2 * indOfVertex + 2, maximumValueChildIndex = indOfVertex;
 
         if (rightChild < heapSize && heap[rightChild] > heap[leftChild]) {
@@ -62,7 +62,7 @@ class HeapSort {
     /**
      * heapify generates max heap
      */
-    void heapify() {
+    private void heapify() {
         for (int i = 0; i < heapSize; i++) {
             siftUp(i);
         }
@@ -71,7 +71,7 @@ class HeapSort {
     /**
      * sorts array
      */
-    int[] heapsort() {
+    public int[] heapsort() {
         heapify();
 
         for (int i = 0; i < len; i++) {
