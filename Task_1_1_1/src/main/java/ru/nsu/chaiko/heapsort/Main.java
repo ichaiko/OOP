@@ -1,6 +1,9 @@
-package ru.nsu.chaiko.HeapSort;
+package ru.nsu.chaiko.heapsort;
 
 public class Main {
+    /**
+     * main func
+     */
     public static void main(String[] args) {
         System.out.println("hello world");
     }
