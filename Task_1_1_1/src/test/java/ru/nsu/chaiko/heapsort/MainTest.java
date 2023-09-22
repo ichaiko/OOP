@@ -16,7 +16,7 @@ class MainTest {
     }
 
     void sample(int[] inputArr, int[] expectedArr) {
-        HeapSort heap = new HeapSort(inputArr);
+        Heap heap = new Heap(inputArr);
         int[] myArr = heap.heapsort();
         Assertions.assertArrayEquals(expectedArr, myArr);
     }
@@ -34,7 +34,7 @@ class MainTest {
             expectedArr[i] = inputArr[i];
         }
 
-        HeapSort heap = new HeapSort(inputArr);
+        Heap heap = new Heap(inputArr);
         Arrays.sort(expectedArr);
 
         int[] myArr = heap.heapsort();
@@ -43,7 +43,7 @@ class MainTest {
 
     @Test
     void heapSortEmptyArr() {
-        HeapSort heap = new HeapSort(new int[]{});
+        Heap heap = new Heap(new int[]{});
         int[] myArr = heap.heapsort();
         int[] expectedArr = {};
         Assertions.assertArrayEquals(expectedArr, myArr);

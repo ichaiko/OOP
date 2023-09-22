@@ -9,13 +9,15 @@ public class Main {
     }
 }
 
-class HeapSort {
+class Heap {
     final private int[] heap;
+    final private int[] arrCopy;
     private int heapSize;
     private final int len;
 
-    public HeapSort(int[] arr) {
+    public Heap(int[] arr) {
         this.heap = arr;
+        this.arrCopy = arr;
         this.heapSize = arr.length;
         this.len = arr.length;
     }
