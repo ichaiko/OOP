@@ -1,7 +1,7 @@
 package ru.nsu.chaiko.heapsort;
 
 public class Main {
-    /**
+    /** .
      * main func
      */
     public static void main(String[] args) {
@@ -11,15 +11,15 @@ public class Main {
 
 class HeapSort {
     final private int[] heap;
-    private int heapSize, len;
+    private int heapSize;
+    private final int len;
 
     public HeapSort(int[] arr) {
         this.heap = arr;
         this.heapSize = arr.length;
         this.len = arr.length;
     }
-
-    /**
+    /** .
      * swaps elements with specified indexes
      */
     private void swap(int ind1, int ind2) {
@@ -29,7 +29,7 @@ class HeapSort {
         heap[ind2] = temp;
     }
 
-    /**
+    /** .
      * siftUp push element up in heap if necessary
      */
 
@@ -42,7 +42,7 @@ class HeapSort {
         }
     }
 
-    /**
+    /** .
      * siftDown moves element down to restore heap after swapping
      */
     private void siftDown(int indOfVertex) {
@@ -62,7 +62,7 @@ class HeapSort {
         }
     }
 
-    /**
+    /** .
      * heapify generates max heap
      */
     private void heapify() {
@@ -71,7 +71,7 @@ class HeapSort {
         }
     }
 
-    /**
+    /** .
      * sorts array
      */
     public int[] heapsort() {

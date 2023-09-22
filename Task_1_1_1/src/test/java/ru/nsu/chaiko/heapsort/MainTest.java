@@ -1,8 +1,8 @@
 package ru.nsu.chaiko.heapsort;
 
 import java.util.Arrays;
-import org.junit.jupiter.api.Assertions;
 import java.util.Random;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class MainTest {

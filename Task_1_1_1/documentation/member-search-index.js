@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"ru.nsu.chaiko.HeapSort","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"ru.nsu.chaiko.HeapSort","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
+memberSearchIndex = [{"p":"ru.nsu.chaiko.heapsort","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"ru.nsu.chaiko.heapsort","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
