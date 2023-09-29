@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.chaiko.Polynomial.MainTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-29T03:57:56" hostname="MacBook-Air-Igor.local" time="0.034">
+  <properties/>
+  <testcase name="test1()" classname="ru.nsu.chaiko.Polynomial.MainTest" time="0.018"/>
+  <testcase name="test2()" classname="ru.nsu.chaiko.Polynomial.MainTest" time="0.01"/>
+  <testcase name="sampleTest()" classname="ru.nsu.chaiko.Polynomial.MainTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
