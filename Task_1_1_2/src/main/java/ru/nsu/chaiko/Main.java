@@ -126,7 +126,8 @@ class Polynomial {
 
         for (int i = 0; i < this.length; i++) {
             for (int j = 0; j < inputPolynomial.length; j++) {
-                answer.coefficients[i + j] += this.coefficients[i] * inputPolynomial.coefficients[j];
+                int subtotal = this.coefficients[i] * inputPolynomial.coefficients[j];
+                answer.coefficients[i + j] += subtotal;
             }
         }
 
@@ -160,12 +161,12 @@ class Polynomial {
     Boolean equals(Polynomial inputPolynomial) {
         if (this.length != inputPolynomial.length) {
             return false;
-        }
-        else {
+        } else {
             for (int i = 0; i < this.length; i++) {
-                if (this.coefficients[i] != inputPolynomial.coefficients[i]) {return false;}
+                if (this.coefficients[i] != inputPolynomial.coefficients[i]) {
+                    return false;
+                }
             }
-
             return true;
         }
     }
@@ -178,25 +179,39 @@ class Polynomial {
     public String toString() {
         StringBuilder build = new StringBuilder();
 
-        if (this.length == 0) {return " ";}
+        if (this.length == 0) {
+            return " ";
+        }
 
         for (int i = this.length - 1; i > 0; i--) {
             if (this.coefficients[i] > 0) {
-                if (i != this.length - 1) {build.append(" + ");}
+                if (i != this.length - 1) {
+                    build.append(" + ");
+                }
 
-                if (i == 1) {build.append(this.coefficients[i]).append("x");}
-                else {build.append(this.coefficients[i]).append("x^").append(i);}
+                if (i == 1) {
+                    build.append(this.coefficients[i]).append("x");
+                }
+                else {
+                    build.append(this.coefficients[i]).append("x^").append(i);
+                }
             }
             if (this.coefficients[i] < 0) {
-                if (i != this.length - 1) {build.append(" - ");}
+                if (i != this.length - 1) {
+                    build.append(" - ");
+                }
                 else {
                     build.append(coefficients[i]).append("x^").append(i);
                     continue;
                 }
                 int value = this.coefficients[i] * -1;
 
-                if (i == 1) {build.append(value).append("x");}
-                else {build.append(value).append("x^").append(i);}
+                if (i == 1) {
+                    build.append(value).append("x");
+                }
+                else {
+                    build.append(value).append("x^").append(i);
+                }
             }
         }
 
@@ -208,8 +223,12 @@ class Polynomial {
                 build.append(this.coefficients[0]);
             }
         } else {
-            if (this.length != 1) {build.append(" + ").append(this.coefficients[0]);}
-            else {build.append(this.coefficients[0]);}
+            if (this.length != 1) {
+                build.append(" + ").append(this.coefficients[0]);
+            }
+            else {
+                build.append(this.coefficients[0]);
+            }
         }
 
         return build.toString();
