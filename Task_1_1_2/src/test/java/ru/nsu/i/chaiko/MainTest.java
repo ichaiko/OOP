@@ -1,4 +1,4 @@
-package ru.nsu.chaiko;
+package ru.nsu.i.chaiko;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
