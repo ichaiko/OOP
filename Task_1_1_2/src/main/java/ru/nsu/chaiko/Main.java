@@ -126,7 +126,7 @@ class Polynomial {
 
         for (int i = 0; i < this.length; i++) {
             for (int j = 0; j < inputPolynomial.length; j++) {
-                answer.coefficients[i+j] += this.coefficients[i] * inputPolynomial.coefficients[j];
+                answer.coefficients[i + j] += this.coefficients[i] * inputPolynomial.coefficients[j];
             }
         }
 
@@ -144,7 +144,7 @@ class Polynomial {
 
         for (int i = 0; i < order; i++) {
             for (int j = 0; j < result.length - 1; j++) {
-                result.coefficients[j] = result.coefficients[j+1] * (j + 1);
+                result.coefficients[j] = result.coefficients[j + 1] * (j + 1);
             }
             result.coefficients[result.length - 1] = 0;
             result.length--;
@@ -158,7 +158,9 @@ class Polynomial {
      */
 
     Boolean equals(Polynomial inputPolynomial) {
-        if (this.length != inputPolynomial.length) {return false;}
+        if (this.length != inputPolynomial.length) {
+            return false;
+        }
         else {
             for (int i = 0; i < this.length; i++) {
                 if (this.coefficients[i] != inputPolynomial.coefficients[i]) {return false;}
