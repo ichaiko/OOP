@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"ru.nsu.chaiko","c":"Main","l":"Main()","url":"%3Cinit%3E()"},{"p":"ru.nsu.chaiko","c":"Main","l":"main(String[])","url":"main(java.lang.String[])"}]
+memberSearchIndex = [{"p":"ru.nsu.i.chaiko","c":"Polynomial","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"ru.nsu.i.chaiko","c":"Polynomial","l":"Polynomial(int[])","url":"%3Cinit%3E(int[])"},{"p":"ru.nsu.i.chaiko","c":"Polynomial","l":"toString()"}]
