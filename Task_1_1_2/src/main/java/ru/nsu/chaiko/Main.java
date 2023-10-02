@@ -1,6 +1,9 @@
 package ru.nsu.chaiko;
-/** main class
+
+/**
+ *  main class.
  */
+
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("hello world");
@@ -10,7 +13,8 @@ public class Main {
 class Polynomial {
     private final int[] coefficients;
     private int length;
-    /** constructor
+    /**
+     * constructor.
      */
 
     public Polynomial(int[] coefficients) throws Exception {
@@ -20,7 +24,8 @@ class Polynomial {
         this.coefficients = coefficients;
         this.length = coefficients.length;
     }
-    /** my pow for ints
+    /**
+     * my pow for ints.
      */
 
     private int pow(int base, int exponent) {
@@ -37,10 +42,11 @@ class Polynomial {
 
         return result;
     }
-    /** calculate value in point
+    /**
+     * calculate value in point.
      */
 
-    int evaluate (int value) {
+    int evaluate(int value) {
         int result = 0;
 
         for (int i = 0; i < length; i++) {
@@ -50,10 +56,11 @@ class Polynomial {
         return result;
     }
 
-    /** addition of two polynomials
+    /**
+     *  addition of two polynomials.
      */
 
-    Polynomial plus (Polynomial inputPolynomial) throws Exception {
+    Polynomial plus(Polynomial inputPolynomial) throws Exception {
         Polynomial answer;
         int[] copy;
 
@@ -77,9 +84,11 @@ class Polynomial {
         return answer;
     }
 
-    /** difference of two
+    /**
+     * difference of two.
      */
-    Polynomial subtraction (Polynomial inputPolynomial) throws Exception {
+
+    Polynomial subtraction(Polynomial inputPolynomial) throws Exception {
         Polynomial answer;
         int[] copy;
 
@@ -107,9 +116,11 @@ class Polynomial {
         return answer;
     }
 
-    /** multiplication of two
+    /**
+     * multiplication of two.
      */
-    Polynomial multiply (Polynomial inputPolynomial) throws Exception {
+
+    Polynomial multiply(Polynomial inputPolynomial) throws Exception {
         int lengthOfAnswer = this.length + inputPolynomial.length - 1;
         Polynomial answer = new Polynomial(new int[lengthOfAnswer]);
 
@@ -123,10 +134,10 @@ class Polynomial {
     }
 
     /**
-     * derivative of polynomial
+     * derivative of polynomial.
      */
 
-    Polynomial differentiate (int order) throws Exception {
+    Polynomial differentiate(int order) throws Exception {
         int[] copy = new int[this.length];
         System.arraycopy(this.coefficients, 0, copy, 0, this.length);
         Polynomial result = new Polynomial(copy);
@@ -142,8 +153,10 @@ class Polynomial {
         return result;
     }
 
-    /** polynomial equals check
+    /**
+     * polynomial equals check.
      */
+
     Boolean equals(Polynomial inputPolynomial) {
         if (this.length != inputPolynomial.length) {return false;}
         else {
@@ -155,8 +168,10 @@ class Polynomial {
         }
     }
 
-    /** toString overriding
+    /**
+     * toString overriding.
      */
+
     @Override
     public String toString() {
         StringBuilder build = new StringBuilder();
