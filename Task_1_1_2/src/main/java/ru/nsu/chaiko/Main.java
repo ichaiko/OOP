@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.polynomial;
+package ru.nsu.chaiko;
 
 public class Main {
     public static void main(String[] args) throws Exception {

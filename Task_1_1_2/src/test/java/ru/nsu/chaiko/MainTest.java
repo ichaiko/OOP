@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.polynomial;
+package ru.nsu.chaiko;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
