@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu.chaiko","c":"StringFinder","l":"StringFinder(String)","url":"%3Cinit%3E(java.lang.String)"}]
