@@ -1,6 +1,7 @@
 package ru.nsu.chaiko;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
@@ -21,33 +22,35 @@ public class StringFinder {
     /**
      * function to find substring.
      */
-    ArrayList<Integer> find(String filePath) throws IOException {
+    ArrayList<Integer> find(String filePath, int limit) throws IOException {
         ArrayList<Integer> list = new ArrayList<>();
+        int bufferSize = limit;
 
-        try(BufferedReader bufReader = new BufferedReader(new FileReader(filePath))) {
-            String separateLine;
+        try (BufferedInputStream stream = new BufferedInputStream(new FileInputStream(filePath), bufferSize)) {
+            byte[] buffer = new byte[bufferSize];
+            int bytesRead;
 
-            while ((separateLine = bufReader.readLine()) != null) {
+            while ((bytesRead = stream.read(buffer)) != -1) {
+                /**
+                 * converting array of bytes to String.
+                 */
+                String partOfFile = new String(buffer, 0, bytesRead, StandardCharsets.UTF_8);
 
-                for(int i = 0; i < separateLine.length(); i++) {
-                    for(int j = 0; j < targetString.length(); j++) {
-                        if(separateLine.charAt(i+j) == targetString.charAt(j) && i + j < separateLine.length()) {
-                            continue;
-                        } else {
+                for (int i = 0; i < partOfFile.length(); i++) {
+                    for (int j = 0; j < targetString.length(); j++) {
+                        if (partOfFile.charAt(i + j) != targetString.charAt(j) && i + j < partOfFile.length()) {
                             flag = false;
                             break;
                         }
                     }
 
-                    if(flag) {
+                    if (flag) {
                         list.add(i);
                     }
                     flag = true;
                 }
-
             }
         }
-
         return list;
     }
 }
