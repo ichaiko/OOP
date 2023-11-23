@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class PathNoteTest {
     @Test
-    void test1() throws NoMarksException, NoSemesterException {
+    void test1() throws UniverseException {
         PathNote pathNote = new PathNote("Igor", "Chaiko");
         pathNote.setMark(1, 4, "declarative programming");
         pathNote.setMark(2, 5, "declarative programming");
@@ -19,17 +19,17 @@ public class PathNoteTest {
     void test2() {
         PathNote pathNote = new PathNote("abc", "dcvv");
 
-        Assertions.assertThrows(NoMarksException.class, () ->{
+        Assertions.assertThrows(UniverseException.class, () ->{
             pathNote.setMark(2, -5, "a");
         });
 
-        Assertions.assertThrows(NoSemesterException.class, () ->{
+        Assertions.assertThrows(UniverseException.class, () ->{
             pathNote.setMark(0, 4, "a");
         });
     }
 
     @Test
-    void test3() throws NoSemesterException, NoMarksException {
+    void test3() throws UniverseException {
         PathNote pathNote = new PathNote("af", "sdf");
         pathNote.setMark(1, 3, "sadf");
         pathNote.setMark(2, 5, "asdf");
@@ -38,5 +38,21 @@ public class PathNoteTest {
 
         Assertions.assertEquals(3.75, pathNote.getAverageScore());
         Assertions.assertFalse(pathNote.redDiploma());
+        Assertions.assertFalse(pathNote.increasedScholarships());
+    }
+
+    @Test
+    void test4() throws UniverseException {
+        PathNote pathNote = new PathNote("asf", "safas");
+        pathNote.setMark(2, 3, "asdf");
+
+        Assertions.assertEquals(3, pathNote.getAverageScore());
+    }
+
+    @Test
+    void test5() {
+        PathNote pathNote = new PathNote("a", "b");
+
+        Assertions.assertThrows(UniverseException.class, pathNote::getAverageScore);
     }
 }
