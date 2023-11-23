@@ -79,9 +79,14 @@ public class PathNote {
             // здесь потоки притянуты за уши, тем более с ними по ассимтотики даже хуже выходит
             // просто полезная тема, захотелось изучить, потрогать
             // можно было применять стримы сразу к мапе, но для первого знакомство too much
-            wholeGradesSum += Arrays.stream(semesters).filter(Objects::nonNull).mapToDouble(Grade::getValue).sum();
+            wholeGradesSum += Arrays.stream(semesters)
+                    .filter(Objects::nonNull)
+                    .mapToDouble(Grade::getValue)
+                    .sum();
 
-            wholeGradesCount += (double) Arrays.stream(semesters).filter(Objects::nonNull).count();
+            wholeGradesCount += (double) Arrays.stream(semesters)
+                    .filter(Objects::nonNull)
+                    .count();
         }
 
         return wholeGradesSum / wholeGradesCount;
@@ -100,7 +105,9 @@ public class PathNote {
 
         for (var value : values) {
             if (value[currentSemester] != Grade.FIVE) {
-                if (value[currentSemester] == null) continue;
+                if (value[currentSemester] == null) {
+                    continue;
+                }
 
                 return false;
             }
@@ -120,7 +127,11 @@ public class PathNote {
         for (String key : keys) {
             var semester = pathNote.get(key);
 
-            threeCounter += Arrays.stream(semester).filter(Objects::nonNull).mapToInt(Grade::getValue).filter(mark -> mark == 3).count();
+            threeCounter += Arrays.stream(semester)
+                    .filter(Objects::nonNull)
+                    .mapToInt(Grade::getValue)
+                    .filter(mark -> mark == 3)
+                    .count();
         }
 
         return threeCounter < 4 && getAverageScore() >= 4.75;
