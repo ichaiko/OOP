@@ -22,11 +22,11 @@ public class PathNoteTest {
     void test2() {
         PathNote pathNote = new PathNote("abc", "dcvv");
 
-        Assertions.assertThrows(UniverseException.class, ()->{
+        Assertions.assertThrows(UniverseException.class, () -> {
             pathNote.setMark(2, -5, "a");
         });
 
-        Assertions.assertThrows(UniverseException.class, ()->{
+        Assertions.assertThrows(UniverseException.class, () -> {
             pathNote.setMark(0, 4, "a");
         });
     }
