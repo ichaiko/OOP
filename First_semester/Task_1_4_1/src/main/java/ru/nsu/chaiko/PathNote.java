@@ -117,8 +117,7 @@ public class PathNote {
     }
 
     /**
-     * condition for getting red diploma:
-     * no more, than three '3' grades and avg score not less than 4.75.
+     * no more than 3 '3' grades & avg score not less than 4.75.
      */
     boolean redDiploma() throws UniverseException {
         var keys = pathNote.keySet();
