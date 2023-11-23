@@ -139,16 +139,7 @@ public class PathNote {
 }
 
 /**
- * class for PathNote exceptions.
- */
-class UniverseException extends Exception {
-    public UniverseException(String message) {
-        super(message);
-    }
-}
-
-/**
- * grades list.
+ * class for grades.
  */
 enum Grade {
     TWO(2), THREE(3), FOUR(4), FIVE(5);
@@ -173,3 +164,4 @@ enum Grade {
         throw new UniverseException("No Grade for this value");
     }
 }
+
