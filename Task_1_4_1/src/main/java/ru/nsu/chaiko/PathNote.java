@@ -8,13 +8,13 @@ import java.util.Objects;
  * main class of the task.
  */
 public class PathNote {
-    final private String name;
-    final private String surname;
+    private final String name;
+    private final String surname;
 
     /**
      * at the beginning every value is null, because no mark per specific semester.
      */
-    final private HashMap<String, Grade[]> pathNote = new HashMap<>();
+    private final HashMap<String, Grade[]> pathNote = new HashMap<>();
 
     public PathNote(String name, String surname) {
         this.name = name;
