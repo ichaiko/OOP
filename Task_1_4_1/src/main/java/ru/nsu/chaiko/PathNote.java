@@ -14,7 +14,7 @@ public class PathNote {
     /**
      * at the beginning every value is null, because no mark per specific semester.
      */
-    private final HashMap<String, Grade[]> pathNote = new HashMap<>();
+    private final HashMap<String, Grades[]> pathNote = new HashMap<>();
 
     public PathNote(String name, String surname) {
         this.name = name;
@@ -45,7 +45,7 @@ public class PathNote {
      * sets mark per specific semester.
      */
     void setMark(int semester, int mark, String subject) throws UniverseException {
-        Grade[] semesters;
+        Grades[] semesters;
 
         if (semester > 8 || semester < 1) {
             throw new UniverseException("incorrect semester value");
@@ -54,10 +54,10 @@ public class PathNote {
         if (pathNote.containsKey(subject)) {
             semesters = pathNote.get(subject);
         } else {
-            semesters = new Grade[8];
+            semesters = new Grades[8];
         }
 
-        semesters[semester - 1] = Grade.setValue(mark);
+        semesters[semester - 1] = Grades.setValue(mark);
         pathNote.put(subject, semesters);
     }
 
@@ -81,7 +81,7 @@ public class PathNote {
             // можно было применять стримы сразу к мапе, но для первого знакомство too much
             wholeGradesSum += Arrays.stream(semesters)
                     .filter(Objects::nonNull)
-                    .mapToDouble(Grade::getValue)
+                    .mapToDouble(Grades::getValue)
                     .sum();
 
             wholeGradesCount += (double) Arrays.stream(semesters)
@@ -104,7 +104,7 @@ public class PathNote {
         }
 
         for (var value : values) {
-            if (value[currentSemester] != Grade.FIVE) {
+            if (value[currentSemester] != Grades.FIVE) {
                 if (value[currentSemester] == null) {
                     continue;
                 }
@@ -128,38 +128,11 @@ public class PathNote {
 
             threeCounter += Arrays.stream(semester)
                     .filter(Objects::nonNull)
-                    .mapToInt(Grade::getValue)
+                    .mapToInt(Grades::getValue)
                     .filter(mark -> mark == 3)
                     .count();
         }
 
         return threeCounter < 4 && getAverageScore() >= 4.75;
-    }
-}
-
-/**
- * class for grades.
- */
-enum Grade {
-    TWO(2), THREE(3), FOUR(4), FIVE(5);
-
-    private final int numericalGrade;
-
-    Grade(int grade) {
-        this.numericalGrade = grade;
-    }
-
-    int getValue() {
-        return numericalGrade;
-    }
-
-    public static Grade setValue(int value) throws UniverseException {
-        for (Grade grade : Grade.values()) {
-            if (value == grade.numericalGrade) {
-                return grade;
-            }
-        }
-
-        throw new UniverseException("No Grade for this value");
     }
 }
