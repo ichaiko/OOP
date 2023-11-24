@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.chaiko","l":"Grades"},{"p":"ru.nsu.chaiko","l":"PathNote"},{"p":"ru.nsu.chaiko","l":"UniverseException"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.chaiko","l":"Grades"},{"p":"ru.nsu.chaiko","l":"PathNote"},{"p":"ru.nsu.chaiko","l":"PathNoteException"}]
