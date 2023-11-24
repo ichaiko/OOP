@@ -16,13 +16,13 @@ public enum Grades {
         return numericalGrade;
     }
 
-    public static Grades setValue(int value) throws UniverseException {
+    public static Grades setValue(int value) throws PathNoteException {
         for (Grades grade : Grades.values()) {
             if (value == grade.numericalGrade) {
                 return grade;
             }
         }
 
-        throw new UniverseException("No Grade for this value");
+        throw new PathNoteException("No Grade for this value");
     }
 }

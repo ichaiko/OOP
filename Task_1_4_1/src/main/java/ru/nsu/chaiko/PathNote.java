@@ -10,13 +10,22 @@ import java.util.Objects;
 public class PathNote {
     private final String name;
     private final String surname;
+    final private int LAST_SEMESTER = 8;
 
     /**
      * at the beginning every value is null, because no mark per specific semester.
      */
     private final HashMap<String, Grades[]> pathNote = new HashMap<>();
 
-    public PathNote(String name, String surname) {
+    public PathNote(String name, String surname) throws PathNoteException {
+        if (name == null || surname == null) {
+            throw new PathNoteException("no name or surname");
+        }
+
+        if (name.isEmpty() || surname.isEmpty()) {
+            throw new PathNoteException("empty name or surname");
+        }
+
         this.name = name;
         this.surname = surname;
     }
@@ -31,7 +40,7 @@ public class PathNote {
         for (String key : keys) {
             var semester = pathNote.get(key);
 
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < LAST_SEMESTER; i++) {
                 if (semester[i] != null && i > res) {
                     res = i;
                 }
@@ -44,17 +53,17 @@ public class PathNote {
     /**
      * sets mark per specific semester.
      */
-    void setMark(int semester, int mark, String subject) throws UniverseException {
+    void setMark(int semester, int mark, String subject) throws PathNoteException {
         Grades[] semesters;
 
-        if (semester > 8 || semester < 1) {
-            throw new UniverseException("incorrect semester value");
+        if (semester > LAST_SEMESTER || semester < 1) {
+            throw new PathNoteException("incorrect semester value");
         }
 
         if (pathNote.containsKey(subject)) {
             semesters = pathNote.get(subject);
         } else {
-            semesters = new Grades[8];
+            semesters = new Grades[LAST_SEMESTER];
         }
 
         semesters[semester - 1] = Grades.setValue(mark);
@@ -64,13 +73,13 @@ public class PathNote {
     /**
      * Calculates avg grade.
      */
-    double getAverageScore() throws UniverseException {
+    double getAverageScore() throws PathNoteException {
         var keys = pathNote.keySet();
         double wholeGradesCount = 0;
         double wholeGradesSum = 0;
 
         if (keys.isEmpty()) {
-            throw new UniverseException("you have no marks!");
+            throw new PathNoteException("you have no marks!");
         }
 
         for (String subj : keys) {
@@ -95,12 +104,12 @@ public class PathNote {
     /**
      * returns possibility of getting increased scholarships.
      */
-    boolean increasedScholarships() throws UniverseException {
+    boolean increasedScholarships() throws PathNoteException {
         int currentSemester = currentSemester();
         var values = pathNote.values();
 
         if (values.isEmpty()) {
-            throw new UniverseException("no semester marks");
+            throw new PathNoteException("no semester marks");
         }
 
         for (var value : values) {
@@ -119,7 +128,7 @@ public class PathNote {
     /**
      * no more than 3 '3' grades & avg score not less than 4.75.
      */
-    boolean redDiploma() throws UniverseException {
+    boolean redDiploma() throws PathNoteException {
         var keys = pathNote.keySet();
         int threeCounter = 0;
 
