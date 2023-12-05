@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.chaiko","l":"Calculator"},{"p":"ru.nsu.chaiko","l":"NoInputException"},{"p":"ru.nsu.chaiko","l":"NoNumberException"}]
