@@ -51,4 +51,15 @@ public class CalculatorTests {
         Calculator calc = new Calculator(true, "sqrt pow - 7 -7 2");
         Assertions.assertEquals(14.0, calc.calculateAnswer());
     }
+
+    @Test
+    void test8() throws NoInputException, NoNumberException {
+        Calculator calc = new Calculator(false);
+    }
+
+    @Test
+    void test9() throws NoInputException, NoNumberException {
+        Calculator calc = new Calculator(true, "cos * / 5 5 0");
+        Assertions.assertEquals(1, calc.calculateAnswer());
+    }
 }
