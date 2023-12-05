@@ -31,4 +31,24 @@ public class CalculatorTests {
             Calculator calc = new Calculator(true);
         });
     }
+
+    @Test
+    void test5() throws NoInputException, NoNumberException {
+        Assertions.assertThrows(NoNumberException.class, () -> {
+            Calculator calc = new Calculator(true, "log");
+            calc.calculateAnswer();
+        });
+    }
+
+    @Test
+    void test6() throws NoInputException, NoNumberException {
+        Calculator calc = new Calculator(true, "sqrt 16");
+        Assertions.assertEquals(4.0, calc.calculateAnswer());
+    }
+
+    @Test
+    void test7() throws NoInputException, NoNumberException {
+        Calculator calc = new Calculator(true, "sqrt pow - 7 -7 2");
+        Assertions.assertEquals(14.0, calc.calculateAnswer());
+    }
 }
