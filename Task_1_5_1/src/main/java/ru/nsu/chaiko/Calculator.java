@@ -77,45 +77,46 @@ public class Calculator {
 
                 double first = this.stack.pop(), second;
                 switch (elem) {
-                    case ("+") -> {
+                    case "+" -> {
                         if (this.stack.size() == 0) {
                             throw new NoNumberException("missed second argument");
                         }
                         second = this.stack.pop();
                         this.stack.push(first + second);
                     }
-                    case ("-") -> {
+                    case "-" -> {
                         if (this.stack.size() == 0) {
                             throw new NoNumberException("missed second argument");
                         }
                         second = this.stack.pop();
                         this.stack.push(first - second);
                     }
-                    case ("*") -> {
+                    case "*" -> {
                         if (this.stack.size() == 0) {
                             throw new NoNumberException("missed second argument");
                         }
                         second = this.stack.pop();
                         this.stack.push(first * second);
                     }
-                    case ("/") -> {
+                    case "/" -> {
                         if (this.stack.size() == 0) {
                             throw new NoNumberException("missed second argument");
                         }
                         second = this.stack.pop();
                         this.stack.push(first / second);
                     }
-                    case ("sin") -> this.stack.push(Math.sin(first));
-                    case ("cos") -> this.stack.push(Math.cos(first));
-                    case ("sqrt") -> this.stack.push(Math.sqrt(first));
-                    case ("pow") -> {
+                    case "sin" -> this.stack.push(Math.sin(first));
+                    case "cos" -> this.stack.push(Math.cos(first));
+                    case "sqrt" -> this.stack.push(Math.sqrt(first));
+                    case "pow" -> {
                         if (this.stack.size() == 0) {
                             throw new NoNumberException("missed second argument");
                         }
                         second = this.stack.pop();
                         this.stack.push(Math.pow(first, second));
                     }
-                    case ("log") -> this.stack.push(Math.log(first));
+                    case "log" -> this.stack.push(Math.log(first));
+                    default -> throw new IllegalArgumentException("unsupported function");
                 }
             }
         }
