@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.chaiko","l":"PrimeNumberCheck"},{"p":"ru.nsu.chaiko","l":"SolutionsForPrimeChecking"}]
