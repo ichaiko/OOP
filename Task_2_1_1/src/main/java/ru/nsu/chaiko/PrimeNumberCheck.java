@@ -10,7 +10,9 @@ public class PrimeNumberCheck {
 
     /**
      * for separate numbers.
+     *
      * @param number input number.
+     *
      * @return Does specific number is prime.
      */
     public static boolean isNumberNotPrime(int number) {

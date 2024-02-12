@@ -11,6 +11,7 @@ public class SolutionsForPrimeChecking {
 
     /**
      * class's constructor.
+     *
      * @param inputArray array that given as input.
      */
     public SolutionsForPrimeChecking(int[] inputArray) {
@@ -19,6 +20,7 @@ public class SolutionsForPrimeChecking {
 
     /**
      * sequential finding not prime number.
+     *
      * @return is there prime number.
      */
     boolean sequentialSolution() {
@@ -37,8 +39,11 @@ public class SolutionsForPrimeChecking {
 
     /**
      * finding primes using 'numOfThreads' threads.
+     *
      * @param numOfThreads parameter.
+     *
      * @return is there prime number.
+     *
      * @throws InterruptedException for thread stopping.
      */
     boolean multiThreadSolution(int numOfThreads) throws InterruptedException {
@@ -73,6 +78,7 @@ public class SolutionsForPrimeChecking {
 
     /**
      * finding prime numbers, using parallel stream.
+     *
      * @return is there prime number.
      */
     boolean parallelStreamSolution() {
@@ -87,14 +93,5 @@ public class SolutionsForPrimeChecking {
                 .count();
 
         return res > 0;
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        var obj = new SolutionsForPrimeChecking(new int[] {20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
-                6998009, 6998029, 6998039, 20165149, 6998051, 6998053});
-
-        System.out.println(obj.sequentialSolution());
-        System.out.println(obj.multiThreadSolution(4));
-        System.out.println(obj.parallelStreamSolution());
     }
 }
