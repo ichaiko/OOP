@@ -42,6 +42,8 @@ public class SolutionsForPrimeChecking {
      * @throws InterruptedException for thread stopping.
      */
     boolean multiThreadSolution(int numOfThreads) throws InterruptedException {
+        PrimeNumberCheck.flag.set(false);
+
         int toEach = this.inputArray.length / numOfThreads;
         int counter = 0;
         ArrayList<ThreadForPrimes> list = new ArrayList<>();
@@ -85,5 +87,14 @@ public class SolutionsForPrimeChecking {
                 .count();
 
         return res > 0;
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        var obj = new SolutionsForPrimeChecking(new int[] {20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
+                6998009, 6998029, 6998039, 20165149, 6998051, 6998053});
+
+        System.out.println(obj.sequentialSolution());
+        System.out.println(obj.multiThreadSolution(4));
+        System.out.println(obj.parallelStreamSolution());
     }
 }
