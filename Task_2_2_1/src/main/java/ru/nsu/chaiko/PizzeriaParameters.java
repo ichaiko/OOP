@@ -4,10 +4,9 @@ import com.google.gson.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.util.ArrayList;
-
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -43,7 +42,11 @@ public class PizzeriaParameters {
     /**
      * Список заказов в пиццерии.
      */
-    static MyBlockingQueue<Order> ordersList, stock;
+    static MyBlockingQueue<Order> ordersList;
+    /**
+     * Склад.
+     */
+    static MyBlockingQueue<Order> stock;
     /**
      * Флаг, указывающий, что рабочий день закончен.
      */
