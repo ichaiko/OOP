@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 
 /**
  * Реализация блокирующей очереди.
+ *
  * @param <T> тип элементов очереди
  */
 public class MyBlockingQueue<T> implements BlockingQueue<T> {
@@ -12,6 +13,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
 
     /**
      * Конструктор очереди.
+     *
      * @param capacity максимальная вместимость очереди
      */
     public MyBlockingQueue(int capacity) {
@@ -20,6 +22,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
 
     /**
      * Метод проверяет, пуста ли очередь.
+     *
      * @return true, если очередь пуста, иначе false
      */
     public boolean isEmpty() {
@@ -28,6 +31,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
 
     /**
      * Метод добавляет элемент в очередь.
+     *
      * @param elem элемент для добавления
      */
     @Override
@@ -46,6 +50,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
 
     /**
      * Метод извлекает элемент из очереди.
+     *
      * @return извлеченный элемент, либо null, если очередь пуста
      */
     @Override

@@ -1,9 +1,10 @@
 package ru.nsu.chaiko;
 
+import com.google.gson.*;
+
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import com.google.gson.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,25 +16,45 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Класс, представляющий параметры и операции пиццерии.
  */
 public class PizzeriaParameters {
-    /** Общее рабочее время пиццерии. */
+    /**
+     * Общее рабочее время пиццерии.
+     */
     static int workTime;
-    /** Вместимость склада. */
+    /**
+     * Вместимость склада.
+     */
     static int stockCapacity;
-    /** Количество пекарей, завершивших работу. */
+    /**
+     * Количество пекарей, завершивших работу.
+     */
     static AtomicInteger bakersFinished = new AtomicInteger(0);
-    /** Список пекарей в пиццерии. */
+    /**
+     * Список пекарей в пиццерии.
+     */
     static ArrayList<Baker> bakers = new ArrayList<>();
-    /** Список курьеров в пиццерии. */
+    /**
+     * Список курьеров в пиццерии.
+     */
     static ArrayList<Courier> couriers = new ArrayList<>();
-    /** Временное хранилище для заказов. */
+    /**
+     * Временное хранилище для заказов.
+     */
     static ArrayList<Order> temporaryStorage = new ArrayList<>();
-    /** Список заказов в пиццерии. */
+    /**
+     * Список заказов в пиццерии.
+     */
     static MyBlockingQueue<Order> ordersList, stock;
-    /** Флаг, указывающий, что рабочий день закончен. */
+    /**
+     * Флаг, указывающий, что рабочий день закончен.
+     */
     static boolean workDayIsOver = false;
-    /** Флаг, указывающий, что работа завершена. */
+    /**
+     * Флаг, указывающий, что работа завершена.
+     */
     static boolean workFinished = false;
-    /** Путь к JSON-файлу с параметрами пиццерии. */
+    /**
+     * Путь к JSON-файлу с параметрами пиццерии.
+     */
     private final String path;
 
     /**
@@ -73,14 +94,16 @@ public class PizzeriaParameters {
         var list = jsonObject.getAsJsonArray("bakers");
         for (var elem : list) {
             JsonObject obj = elem.getAsJsonObject();
-            Baker baker = new Baker(obj.get("name").getAsString(), obj.get("cookingSpeed").getAsInt());
+            Baker baker = new Baker(obj.get("name").getAsString(),
+                    obj.get("cookingSpeed").getAsInt());
             PizzeriaParameters.bakers.add(baker);
         }
 
         list = jsonObject.getAsJsonArray("couriers");
         for (var elem : list) {
             JsonObject obj = elem.getAsJsonObject();
-            Courier courier = new Courier(obj.get("name").getAsString(), obj.get("bagCapacity").getAsInt());
+            Courier courier = new Courier(obj.get("name").getAsString(),
+                    obj.get("bagCapacity").getAsInt());
             PizzeriaParameters.couriers.add(courier);
         }
 

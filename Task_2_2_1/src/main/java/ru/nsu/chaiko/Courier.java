@@ -58,7 +58,8 @@ public class Courier extends Thread {
 
             int count = PizzeriaParameters.bakersFinished.get();
 
-            if ((PizzeriaParameters.stock.isEmpty() && count == PizzeriaParameters.bakers.size()) ||
+            if ((PizzeriaParameters.stock.isEmpty() &&
+                    count == PizzeriaParameters.bakers.size()) ||
                     PizzeriaParameters.workDayIsOver) {
                 break;
             }
