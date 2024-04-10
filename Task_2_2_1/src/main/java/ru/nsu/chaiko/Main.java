@@ -9,8 +9,11 @@ public class Main {
 
     /**
      * Основной метод, запускающий приложение.
+     *
      * @param args аргументы командной строки (не используются)
+     *
      * @throws FileNotFoundException если файл параметров пиццерии не найден
+     *
      * @throws InterruptedException если поток главного метода прерван во время ожидания завершения других потоков
      */
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {

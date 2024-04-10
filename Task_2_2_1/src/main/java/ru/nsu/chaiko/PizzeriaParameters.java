@@ -38,6 +38,7 @@ public class PizzeriaParameters {
 
     /**
      * Создает новый экземпляр класса PizzeriaParameters с указанным путем к JSON-файлу.
+     *
      * @param path Путь к JSON-файлу.
      */
     public PizzeriaParameters(String path) {
@@ -46,6 +47,7 @@ public class PizzeriaParameters {
 
     /**
      * Извлекает параметры пиццерии из JSON-файла.
+     *
      * @throws FileNotFoundException Если файл, указанный по пути, не найден.
      */
     public void extractPizzeriaParams() throws FileNotFoundException {
@@ -111,6 +113,7 @@ public class PizzeriaParameters {
 
     /**
      * Сохраняет оставшиеся заказы в JSON-файл.
+     *
      * @param filePath Путь к файлу, в который необходимо сохранить оставшиеся заказы.
      */
     public static void saveRemained(String filePath) {

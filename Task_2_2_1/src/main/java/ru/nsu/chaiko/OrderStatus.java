@@ -20,6 +20,7 @@ public enum OrderStatus {
 
     /**
      * Создает новый статус заказа с указанным числовым значением.
+     *
      * @param status Числовое представление статуса заказа.
      */
     OrderStatus(int status) {
@@ -28,6 +29,7 @@ public enum OrderStatus {
 
     /**
      * Устанавливает числовое представление статуса заказа.
+     *
      * @param status Числовое представление статуса заказа.
      */
     public void setStatus(int status) {
@@ -36,6 +38,7 @@ public enum OrderStatus {
 
     /**
      * Возвращает строковое представление статуса заказа.
+     *
      * @return Строковое представление статуса заказа.
      */
     @Override

@@ -12,7 +12,9 @@ public class Courier extends Thread {
 
     /**
      * Конструктор курьера.
+     *
      * @param name имя курьера
+     *
      * @param bagCapacity вместимость сумки курьера (количество заказов)
      */
     public Courier(String name, int bagCapacity) {

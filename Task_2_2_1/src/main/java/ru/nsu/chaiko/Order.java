@@ -13,7 +13,9 @@ public class Order {
 
     /**
      * Создает новый заказ с указанным идентификатором и временем до доставки.
+     *
      * @param id Уникальный идентификатор заказа.
+     *
      * @param timeToDelivery Время до доставки заказа.
      */
     public Order(int id, int timeToDelivery) {
@@ -25,6 +27,7 @@ public class Order {
 
     /**
      * Возвращает текущий статус заказа.
+     *
      * @return Текущий статус заказа.
      */
     public String getStatus() {
@@ -33,6 +36,7 @@ public class Order {
 
     /**
      * Возвращает уникальный идентификатор заказа.
+     *
      * @return Уникальный идентификатор заказа.
      */
     public int getId() {
@@ -41,6 +45,7 @@ public class Order {
 
     /**
      * Устанавливает новый статус заказа.
+     *
      * @param status Новый статус заказа.
      */
     public void setStatus(OrderStatus status) {
@@ -49,6 +54,7 @@ public class Order {
 
     /**
      * Возвращает время до доставки заказа.
+     *
      * @return Время до доставки заказа.
      */
     public int getTimeToDelivery() {

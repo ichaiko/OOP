@@ -9,7 +9,9 @@ public class Baker extends Thread {
 
     /**
      * Конструктор пекаря.
+     *
      * @param name имя пекаря
+     *
      * @param cookingSpeed скорость приготовления заказов (в секундах)
      */
     public Baker(String name, int cookingSpeed) {
