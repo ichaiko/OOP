@@ -1,7 +1,6 @@
 package ru.nsu.chaiko;
 
 import com.google.gson.*;
-
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.FileReader;

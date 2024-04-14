@@ -35,7 +35,8 @@ public class Baker extends Thread {
             }
 
             order.setStatus(OrderStatus.COOCKING);
-            System.out.println("id: " + order.getId() + " - status: " + order.getStatus() + " by " + this.name);
+            System.out.println("id: " + order.getId() + " - status: " +
+                    order.getStatus() + " by " + this.name);
 
             try {
                 sleep(this.cookingSpeed * 1000L);
@@ -45,7 +46,8 @@ public class Baker extends Thread {
 
             PizzeriaParameters.stock.put(order);
             order.setStatus(OrderStatus.INSTOCK);
-            System.out.println("id: " + order.getId() + " - status: " + order.getStatus() + " by " + this.name);
+            System.out.println("id: " + order.getId() + " - status: " +
+                    order.getStatus() + " by " + this.name);
         }
 
         PizzeriaParameters.bakersFinished.incrementAndGet();
