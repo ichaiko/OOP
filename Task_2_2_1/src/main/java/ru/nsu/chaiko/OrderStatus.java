@@ -5,36 +5,15 @@ package ru.nsu.chaiko;
  */
 public enum OrderStatus {
     /** Заказ в очереди. */
-    INQUEUE(0),
+    INQUEUE,
     /** Заказ готовится. */
-    COOCKING(1),
+    COOCKING,
     /** Заказ в наличии. */
-    INSTOCK(2),
+    INSTOCK,
     /** Заказ доставляется. */
-    DELIVERING(3),
+    DELIVERING,
     /** Заказ доставлен. */
-    DELIVERED(5);
-
-    /** Числовое представление статуса заказа. */
-    private int status;
-
-    /**
-     * Создает новый статус заказа с указанным числовым значением.
-     *
-     * @param status Числовое представление статуса заказа.
-     */
-    OrderStatus(int status) {
-        this.status = status;
-    }
-
-    /**
-     * Устанавливает числовое представление статуса заказа.
-     *
-     * @param status Числовое представление статуса заказа.
-     */
-    public void setStatus(int status) {
-        this.status = status;
-    }
+    DELIVERED;
 
     /**
      * Возвращает строковое представление статуса заказа.

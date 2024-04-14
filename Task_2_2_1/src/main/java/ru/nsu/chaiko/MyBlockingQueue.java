@@ -36,7 +36,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
      */
     @Override
     public synchronized void put(T elem) {
-        while (this.orders.size() >= this.capacity) {
+        if (this.orders.size() == this.capacity) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -45,7 +45,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
         }
 
         this.orders.addLast(elem);
-        notify();
+        notifyAll();
     }
 
     /**
@@ -55,7 +55,7 @@ public class MyBlockingQueue<T> implements BlockingQueue<T> {
      */
     @Override
     public synchronized T poll() {
-        while (this.orders.size() == 0) {
+        if (this.orders.size() == 0) {
             try {
                 if (PizzeriaParameters.ordersList.isEmpty()) {
                     return null;

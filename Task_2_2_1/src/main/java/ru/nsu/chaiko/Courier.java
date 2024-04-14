@@ -38,7 +38,7 @@ public class Courier extends Thread {
                 }
 
                 order.setStatus(OrderStatus.DELIVERING);
-                System.out.println("id: " + order.getId() + " - status: " + order.getStatus());
+                System.out.println("id: " + order.getId() + " - status: " + order.getStatus() + " by " + this.name);
                 bag.add(order);
                 timeUntilDelivery += order.getTimeToDelivery();
                 ++cnt;
@@ -52,7 +52,7 @@ public class Courier extends Thread {
 
             for (var order : bag) {
                 order.setStatus(OrderStatus.DELIVERED);
-                System.out.println("id: " + order.getId() + " - status: " + order.getStatus());
+                System.out.println("id: " + order.getId() + " - status: " + order.getStatus() + " by " + this.name);
                 bag.remove(order);
             }
 
