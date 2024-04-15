@@ -1,0 +1,69 @@
+{
+  "workTime" : 30,
+  "stockCapacity" : 12,
+
+  "bakers" : [
+    {
+      "name" : "firstBaker",
+      "cookingSpeed" : 3
+    },
+    {
+      "name" : "secondBaker",
+      "cookingSpeed" : 6
+    },
+    {
+      "name" : "thirdBaker",
+      "cookingSpeed" : 8
+    }
+  ],
+
+  "couriers" : [
+    {
+      "name" : "firstCourier",
+      "bagCapacity" : 2
+    },
+    {
+      "name" : "secondCourier",
+      "bagCapacity" : 5
+    }
+  ],
+
+  "ordersList" : [
+    {
+      "id" :  1,
+      "timeToDelivery" : 2
+    },
+    {
+      "id" :  2,
+      "timeToDelivery" : 3
+    },
+    {
+      "id" :  3,
+      "timeToDelivery" : 2
+    },
+    {
+      "id" :  4,
+      "timeToDelivery" : 2
+    },
+    {
+      "id" :  5,
+      "timeToDelivery" : 2
+    },
+    {
+      "id" :  6,
+      "timeToDelivery" : 3
+    },
+    {
+      "id" :  7,
+      "timeToDelivery" : 3
+    },
+    {
+      "id" :  8,
+      "timeToDelivery" : 2
+    },
+    {
+      "id" :  9,
+      "timeToDelivery" : 3
+    }
+  ]
+}
