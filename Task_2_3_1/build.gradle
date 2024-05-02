@@ -16,7 +16,11 @@ repositories {
 ext {
   junitVersion = '5.9.2'
 }
-
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
+}
 sourceCompatibility = '19'
 targetCompatibility = '19'
 
