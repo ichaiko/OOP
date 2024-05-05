@@ -1,7 +1,6 @@
-package ru.nsu.chaiko.snake;
+package ru.nsu.chaiko.snake.model;
 
 import javafx.scene.Group;
-import javafx.scene.paint.Color;
 import org.junit.jupiter.api.Test;
 
 /**

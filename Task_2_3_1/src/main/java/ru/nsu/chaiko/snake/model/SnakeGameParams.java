@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.snake;
+package ru.nsu.chaiko.snake.model;
 
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
@@ -10,17 +10,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class SnakeGameParams {
     /** Number of columns in the game field. */
-    static final int columnsCount = 20;
+    public static final int COLUMNS_COUNT = 20;
     /** Number of rows in the game field. */
-    static final int rowsCount = 20;
+    public static final int ROWS_COUNT = 20;
     /** Size of each cell in the game field. */
-    static final int cellSize = 30;
+    public static final int CELL_SIZE = 30;
     /** Number of segments required to win the game. */
-    static final int sizeToWin = 7;
+    public static final int SNAKE_SIZE_TO_WIN = 6;
     /** Number of food items initially on the game field. */
-    static final int foodCount = 3;
+    public static final int FOOD_COUNT = 3;
     /** Indicates whether the game is over. */
-    static AtomicBoolean gameIsOver = new AtomicBoolean(false);
+    public static AtomicBoolean gameLost = new AtomicBoolean(false);
+    /** Indicates whether the app is over. */
+    public static AtomicBoolean appIsOver = new AtomicBoolean(false);
 
     /**
      * Initializes the game field with default values and settings.
@@ -29,14 +31,14 @@ public class SnakeGameParams {
      * @param root The root group where the game field will be added.
      */
     static void initField(GameField[][] field, Group root) {
-        for (int i = 0; i < SnakeGameParams.rowsCount; i++) {
-            for (int j = 0; j < SnakeGameParams.columnsCount; j++) {
+        for (int i = 0; i < SnakeGameParams.ROWS_COUNT; i++) {
+            for (int j = 0; j < SnakeGameParams.COLUMNS_COUNT; j++) {
                 field[i][j] = new GameField();
 
-                field[i][j].setX(SnakeGameParams.cellSize * i);
-                field[i][j].setY(SnakeGameParams.cellSize * j);
-                field[i][j].setWidth(SnakeGameParams.cellSize);
-                field[i][j].setHeight(SnakeGameParams.cellSize);
+                field[i][j].setX(SnakeGameParams.CELL_SIZE * i);
+                field[i][j].setY(SnakeGameParams.CELL_SIZE * j);
+                field[i][j].setWidth(SnakeGameParams.CELL_SIZE);
+                field[i][j].setHeight(SnakeGameParams.CELL_SIZE);
                 field[i][j].setFill(Color.GREEN);
                 field[i][j].setStroke(Color.BLACK);
 

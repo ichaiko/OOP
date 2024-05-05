@@ -29,8 +29,8 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 application {
-  mainModule = 'ru.nsu.chaiko.snake'
-  mainClass = 'ru.nsu.chaiko.snake.Main'
+  mainModule = 'ru.nsu.chaiko.snake.model'
+  mainClass = 'ru.nsu.chaiko.snake.model.Main'
 }
 
 javafx {

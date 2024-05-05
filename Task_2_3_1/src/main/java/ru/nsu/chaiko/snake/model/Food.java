@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.snake;
+package ru.nsu.chaiko.snake.model;
 
 import javafx.scene.paint.Color;
 
@@ -20,7 +20,7 @@ public class Food {
      *
      * @param field The game field represented as a 2D array of GameField objects.
      */
-    static void generateNewFood(GameField[][] field) {
+    public static void generateNewFood(GameField[][] field) {
         generateTwo();
         while (field[currentX][currentY].getFill() != Color.GREEN
                 && !foodList.contains(field[currentX][currentY])) {
@@ -33,9 +33,9 @@ public class Food {
     /**
      * Generates new random coordinates for food.
      */
-    static void generateTwo() {
-        currentX = (int) (Math.random() * (SnakeGameParams.columnsCount - 1));
-        currentY = (int) (Math.random() * (SnakeGameParams.rowsCount - 1));
+    public static void generateTwo() {
+        currentX = (int) (Math.random() * (SnakeGameParams.COLUMNS_COUNT - 1));
+        currentY = (int) (Math.random() * (SnakeGameParams.ROWS_COUNT - 1));
     }
 
     /**
@@ -43,7 +43,7 @@ public class Food {
      *
      * @param food The food to be removed represented as a GameField object.
      */
-    static void removeFood(GameField food) {
+    public static void removeFood(GameField food) {
         food.setFill(Color.GREEN);
         foodList.remove(food);
     }

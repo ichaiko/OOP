@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.snake;
+package ru.nsu.chaiko.snake.model;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -19,10 +19,10 @@ public class GameField extends Rectangle {
         this.snakeX = x;
         this.snakeY = y;
         setFill(Color.BLUE);
-        setWidth(SnakeGameParams.cellSize);
-        setHeight(SnakeGameParams.cellSize);
-        setX(x * SnakeGameParams.cellSize);
-        setY(y * SnakeGameParams.cellSize);
+        setWidth(SnakeGameParams.CELL_SIZE);
+        setHeight(SnakeGameParams.CELL_SIZE);
+        setX(x * SnakeGameParams.CELL_SIZE);
+        setY(y * SnakeGameParams.CELL_SIZE);
     }
 
     /**
@@ -30,8 +30,8 @@ public class GameField extends Rectangle {
      */
     public GameField() {
         this.setFill(Color.GREEN);
-        setWidth(SnakeGameParams.cellSize);
-        setHeight(SnakeGameParams.cellSize);
+        setWidth(SnakeGameParams.CELL_SIZE);
+        setHeight(SnakeGameParams.CELL_SIZE);
     }
 
     /**
@@ -50,7 +50,7 @@ public class GameField extends Rectangle {
      */
     public void setSnakeX(double snakeX) {
         this.snakeX = snakeX;
-        setX(snakeX * SnakeGameParams.cellSize);
+        setX(snakeX * SnakeGameParams.CELL_SIZE);
         setFill(Color.BLUE);
     }
 
@@ -70,7 +70,7 @@ public class GameField extends Rectangle {
      */
     public void setSnakeY(double snakeY) {
         this.snakeY = snakeY;
-        setY(snakeY * SnakeGameParams.cellSize);
+        setY(snakeY * SnakeGameParams.CELL_SIZE);
         setFill(Color.BLUE);
     }
 }
