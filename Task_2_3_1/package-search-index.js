@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"ru.nsu.chaiko.snake","l":"ru.nsu.chaiko.snake.controller"},{"m":"ru.nsu.chaiko.snake","l":"ru.nsu.chaiko.snake.model"},{"m":"ru.nsu.chaiko.snake","l":"ru.nsu.chaiko.snake.view"}];updateSearchResults();

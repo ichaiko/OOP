@@ -1,0 +1,4 @@
+module:ru.nsu.chaiko.snake
+ru.nsu.chaiko.snake.controller
+ru.nsu.chaiko.snake.model
+ru.nsu.chaiko.snake.view
