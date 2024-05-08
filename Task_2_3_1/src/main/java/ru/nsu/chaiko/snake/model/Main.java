@@ -5,11 +5,11 @@ import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import ru.nsu.chaiko.snake.controller.SnakeController;
-import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
+import ru.nsu.chaiko.snake.controller.SnakeController;
+import java.io.IOException;
 import ru.nsu.chaiko.snake.view.SnakeGameView;
 
 /**
@@ -48,8 +48,8 @@ public class Main extends Application {
 
         Main.view = startView;
 
-        GameField[][] field = new GameField[SnakeGameParams.ROWS_COUNT]
-                [SnakeGameParams.COLUMNS_COUNT];
+        GameField[][] field =
+                new GameField[SnakeGameParams.ROWS_COUNT][SnakeGameParams.COLUMNS_COUNT];
         Group root = new Group();
         GameField snakeHead = new GameField(SnakeGameParams.COLUMNS_COUNT - 1,
                 SnakeGameParams.ROWS_COUNT - 1);
@@ -94,7 +94,9 @@ public class Main extends Application {
                         lastPressedKey.set(event.getCode());
                     }
                 }
-                default -> {}
+                default -> {
+
+                }
             }
 
             lastPressedKeys.add(lastPressedKey);

@@ -1,7 +1,7 @@
 package ru.nsu.chaiko.snake.model;
 
-import javafx.scene.Group;
 import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.scene.Group;
 import javafx.scene.paint.Color;
 
 /**

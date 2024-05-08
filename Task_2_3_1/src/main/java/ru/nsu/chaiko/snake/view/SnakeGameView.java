@@ -3,8 +3,8 @@ package ru.nsu.chaiko.snake.view;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import java.io.IOException;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**

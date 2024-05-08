@@ -4,13 +4,13 @@ import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
-import ru.nsu.chaiko.snake.model.Food;
-import ru.nsu.chaiko.snake.model.GameField;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Objects;
-import ru.nsu.chaiko.snake.model.SnakeGameParams;
 import java.util.concurrent.atomic.AtomicReference;
+import ru.nsu.chaiko.snake.model.Food;
+import ru.nsu.chaiko.snake.model.GameField;
+import ru.nsu.chaiko.snake.model.SnakeGameParams;
 
 /**
  * Controls the movement and behavior of the snake in the game.
