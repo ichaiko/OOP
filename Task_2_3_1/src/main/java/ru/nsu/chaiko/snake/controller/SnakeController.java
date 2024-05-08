@@ -3,11 +3,11 @@ package ru.nsu.chaiko.snake.controller;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
+import javafx.scene.paint.Color;
 import ru.nsu.chaiko.snake.model.Food;
 import ru.nsu.chaiko.snake.model.GameField;
 import ru.nsu.chaiko.snake.model.SnakeGameParams;
@@ -152,19 +152,24 @@ public class SnakeController {
                             % SnakeGameParams.COLUMNS_COUNT);
                 }
             }
+            default -> {
+
+            }
         }
 
         if (!foodEaten) {
             for (int i = 1; i < snake.size(); i++) {
                 GameField elem = snake.get(i);
-                if (elem.getSnakeX() == snakeHead.getSnakeX() && elem.getSnakeY() == snakeHead.getSnakeY()) {
+                if (elem.getSnakeX() == snakeHead.getSnakeX() &&
+                        elem.getSnakeY() == snakeHead.getSnakeY()) {
                     SnakeGameParams.gameLost.set(true);
                 }
             }
 
             for (int i = 1; i < snake.size(); i++) {
                 current = snake.get(i);
-                int x = previous.getSnakeX(), y = previous.getSnakeY();
+                int x = previous.getSnakeX();
+                int y = previous.getSnakeY();
                 previous = new GameField(current.getSnakeX(), current.getSnakeY());
                 current.setSnakeX(x);
                 current.setSnakeY(y);

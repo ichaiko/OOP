@@ -1,7 +1,7 @@
 package ru.nsu.chaiko.snake.view;
 
-import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

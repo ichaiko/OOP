@@ -2,15 +2,15 @@ package ru.nsu.chaiko.snake.model;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicReference;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import ru.nsu.chaiko.snake.view.SnakeGameView;
 import ru.nsu.chaiko.snake.controller.SnakeController;
+import ru.nsu.chaiko.snake.view.SnakeGameView;
 
 /**
  * The Main class responsible for initializing and running the Snake game.
