@@ -1,12 +1,12 @@
 package ru.nsu.chaiko.snake.controller;
 
-import javafx.application.Platform;
-import javafx.scene.Group;
-import javafx.scene.input.KeyCode;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
+import javafx.application.Platform;
+import javafx.scene.Group;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import ru.nsu.chaiko.snake.model.Food;
 import ru.nsu.chaiko.snake.model.GameField;
@@ -160,8 +160,8 @@ public class SnakeController {
         if (!foodEaten) {
             for (int i = 1; i < snake.size(); i++) {
                 GameField elem = snake.get(i);
-                if (elem.getSnakeX() == snakeHead.getSnakeX() &&
-                        elem.getSnakeY() == snakeHead.getSnakeY()) {
+                if (elem.getSnakeX() == snakeHead.getSnakeX()
+                        && elem.getSnakeY() == snakeHead.getSnakeY()) {
                     SnakeGameParams.gameLost.set(true);
                 }
             }

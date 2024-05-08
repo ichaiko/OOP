@@ -1,8 +1,8 @@
 package ru.nsu.chaiko.snake.model;
 
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -54,8 +54,6 @@ public class Main extends Application {
         GameField snakeHead = new GameField(SnakeGameParams.COLUMNS_COUNT - 1,
                 SnakeGameParams.ROWS_COUNT - 1);
         ArrayList<GameField> snake = new ArrayList<>();
-        AtomicReference<KeyCode> lastPressedKey = new AtomicReference<>();
-        ArrayDeque<AtomicReference<KeyCode>> lastPressedKeys = new ArrayDeque<>();
 
         SnakeGameParams.initField(field, root);
 
@@ -68,6 +66,8 @@ public class Main extends Application {
         root.getChildren().add(snakeHead);
         Main.root = root;
         AtomicReference<KeyCode> currentDirectionKey = new AtomicReference<>();
+        AtomicReference<KeyCode> lastPressedKey = new AtomicReference<>();
+        ArrayDeque<AtomicReference<KeyCode>> lastPressedKeys = new ArrayDeque<>();
 
         root.requestFocus();
         root.setOnKeyPressed(event -> {

@@ -34,12 +34,12 @@ public class SnakeGameTest {
     @Test
     void test3() {
         GameField snakeField = new GameField();
-        int initialX = snakeField.getSnakeX();
-        int initialY = snakeField.getSnakeY();
         snakeField.setSnakeX(1.0);
         snakeField.setSnakeY(2.0);
         assert snakeField.getSnakeX() == 1;
         assert snakeField.getSnakeY() == 2;
+        int initialX = snakeField.getSnakeX();
+        int initialY = snakeField.getSnakeY();
         snakeField.setSnakeX(initialX);
         snakeField.setSnakeY(initialY);
     }
