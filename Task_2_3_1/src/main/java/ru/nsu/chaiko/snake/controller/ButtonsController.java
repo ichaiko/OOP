@@ -1,11 +1,11 @@
 package ru.nsu.chaiko.snake.controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import ru.nsu.chaiko.snake.model.Main;
-import java.net.URL;
-import java.util.ResourceBundle;
 import ru.nsu.chaiko.snake.model.SnakeGameParams;
 
 /**
