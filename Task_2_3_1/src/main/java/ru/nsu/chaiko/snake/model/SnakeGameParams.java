@@ -1,9 +1,8 @@
 package ru.nsu.chaiko.snake.model;
 
 import javafx.scene.Group;
-import javafx.scene.paint.Color;
-
 import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.scene.paint.Color;
 
 /**
  * Holds parameters and initialization methods for the Snake game.

@@ -4,9 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-
 import java.io.IOException;
+import javafx.stage.Stage;
 
 /**
  * Represents the view for the Snake game.
@@ -31,7 +30,8 @@ public class SnakeGameView {
      * @throws IOException If an error occurs during loading.
      */
     public void loadFromFxml(String sourceName) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ru/nsu/chaiko/snake/view/" + sourceName));
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/ru/nsu/chaiko/snake/view/" + sourceName));
         Parent parent = loader.load();
         this.scene = new Scene(parent);
     }

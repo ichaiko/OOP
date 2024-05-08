@@ -6,11 +6,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import ru.nsu.chaiko.snake.model.Food;
 import ru.nsu.chaiko.snake.model.GameField;
-import ru.nsu.chaiko.snake.model.SnakeGameParams;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Objects;
+import ru.nsu.chaiko.snake.model.SnakeGameParams;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -65,7 +64,8 @@ public class SnakeController {
         movement.start();
     }
 
-    private void moveSnake(AtomicReference<KeyCode> lastPressedKey, AtomicReference<KeyCode> currentDirectionKey) {
+    private void moveSnake(AtomicReference<KeyCode> lastPressedKey,
+                           AtomicReference<KeyCode> currentDirectionKey) {
         var key = lastPressedKey.get();
         if (key == null) {
             return;
@@ -73,8 +73,10 @@ public class SnakeController {
 
         boolean foodEaten = false;
 
-        GameField snakeHead = snake.get(0), current;
-        GameField previous = new GameField(snakeHead.getSnakeX(), snakeHead.getSnakeY()), element;
+        GameField snakeHead = snake.get(0);
+        GameField current;
+        GameField previous = new GameField(snakeHead.getSnakeX(), snakeHead.getSnakeY());
+        GameField element;
 
         switch (key) {
             case D -> {

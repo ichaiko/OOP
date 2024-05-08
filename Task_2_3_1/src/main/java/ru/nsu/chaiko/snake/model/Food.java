@@ -1,8 +1,7 @@
 package ru.nsu.chaiko.snake.model;
 
-import javafx.scene.paint.Color;
-
 import java.util.HashSet;
+import javafx.scene.paint.Color;
 
 /**
  * Represents food in the Snake game.

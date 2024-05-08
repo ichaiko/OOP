@@ -7,7 +7,8 @@ import javafx.scene.shape.Rectangle;
  * Represents a single field element in the Snake game.
  */
 public class GameField extends Rectangle {
-    private double snakeX, snakeY;
+    private double snakeX;
+    private double snakeY;
 
     /**
      * Constructs a GameField object with the specified coordinates.

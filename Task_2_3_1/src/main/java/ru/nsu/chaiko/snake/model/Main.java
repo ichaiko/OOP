@@ -6,12 +6,11 @@ import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import ru.nsu.chaiko.snake.controller.SnakeController;
-import ru.nsu.chaiko.snake.view.SnakeGameView;
-
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
+import ru.nsu.chaiko.snake.view.SnakeGameView;
 
 /**
  * The Main class responsible for initializing and running the Snake game.
@@ -49,9 +48,11 @@ public class Main extends Application {
 
         Main.view = startView;
 
-        GameField[][] field = new GameField[SnakeGameParams.ROWS_COUNT][SnakeGameParams.COLUMNS_COUNT];
+        GameField[][] field = new GameField[SnakeGameParams.ROWS_COUNT]
+                [SnakeGameParams.COLUMNS_COUNT];
         Group root = new Group();
-        GameField snakeHead = new GameField(SnakeGameParams.COLUMNS_COUNT - 1, SnakeGameParams.ROWS_COUNT - 1);
+        GameField snakeHead = new GameField(SnakeGameParams.COLUMNS_COUNT - 1,
+                SnakeGameParams.ROWS_COUNT - 1);
         ArrayList<GameField> snake = new ArrayList<>();
         AtomicReference<KeyCode> lastPressedKey = new AtomicReference<>();
         ArrayDeque<AtomicReference<KeyCode>> lastPressedKeys = new ArrayDeque<>();
@@ -93,6 +94,7 @@ public class Main extends Application {
                         lastPressedKey.set(event.getCode());
                     }
                 }
+                default -> {}
             }
 
             lastPressedKeys.add(lastPressedKey);
