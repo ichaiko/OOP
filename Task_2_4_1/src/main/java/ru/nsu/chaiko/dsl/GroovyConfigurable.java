@@ -6,15 +6,12 @@ import groovy.lang.GroovyObjectSupport;
 import groovy.lang.GroovyShell;
 import groovy.lang.MetaProperty;
 import groovy.util.DelegatingScript;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
-
 import org.codehaus.groovy.control.CompilerConfiguration;
-
 import ru.nsu.chaiko.Main;
 
 /**
@@ -27,7 +24,8 @@ public class GroovyConfigurable extends GroovyObjectSupport {
      */
 
     public void configureFromFile(File file) throws
-            IOException, NoSuchFieldException, InvocationTargetException, InstantiationException,
+            IOException, NoSuchFieldException, InvocationTargetException,
+            InstantiationException,
             IllegalAccessException, NoSuchMethodException {
 
         CompilerConfiguration cc = new CompilerConfiguration();
@@ -48,7 +46,8 @@ public class GroovyConfigurable extends GroovyObjectSupport {
 
         for (MetaProperty property : getMetaClass().getProperties()) {
             Object value = getProperty(property.getName());
-            if (Collection.class.isAssignableFrom(property.getType()) && value instanceof Collection) {
+            if (Collection.class.isAssignableFrom(property
+                    .getType()) && value instanceof Collection) {
                 setProperty(property.getName(), configureCollection(property, value));
             }
         }

@@ -9,11 +9,13 @@ import ru.nsu.chaiko.dsl.Task;
  */
 public class GroupMemberResult {
     private final GroupMember groupMember;
-    private final HashMap<Task, HashMap<TaskCharacteristics, Boolean>> taskResults = new HashMap<>();
+    private final HashMap<Task,
+            HashMap<TaskCharacteristics, Boolean>> taskResults = new HashMap<>();
     private double score;
 
     /**
      * constructor.
+     *
      * @param groupMember arg.
      */
     public GroupMemberResult(GroupMember groupMember) {
@@ -22,7 +24,9 @@ public class GroupMemberResult {
 
     /**
      * change state.
+     *
      * @param task t.
+     *
      * @param taskResult t.
      */
 
@@ -32,6 +36,7 @@ public class GroupMemberResult {
 
     /**
      * setter.
+     *
      * @param score s.
      */
     public void setScore(double score) {
@@ -40,6 +45,7 @@ public class GroupMemberResult {
 
     /**
      * getter.
+     *
      * @return score.
      */
     public double getScore() {
@@ -48,6 +54,7 @@ public class GroupMemberResult {
 
     /**
      * getter.
+     *
      * @return member.
      */
     public GroupMember getGroupMember() {
@@ -56,6 +63,7 @@ public class GroupMemberResult {
 
     /**
      * getter.
+     *
      * @return state.
      */
     public HashMap<Task, HashMap<TaskCharacteristics, Boolean>> getTaskResults() {

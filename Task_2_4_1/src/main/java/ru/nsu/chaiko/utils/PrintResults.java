@@ -40,25 +40,32 @@ public class PrintResults {
                 var subtotal = tasksResults.get(task);
                 System.out.format(" %-11s|", task.getTaskName());
 
-                if (subtotal.get(TaskCharacteristics.isBuild))
+                if (subtotal.get(TaskCharacteristics.isBuild)) {
                     System.out.format("    %-5s|", "+");
-                else
+                }
+                else {
                     System.out.format("    %-5s|", "-");
+                }
 
-                if (subtotal.get(TaskCharacteristics.docksGenerated))
+                if (subtotal.get(TaskCharacteristics.docksGenerated)) {
                     System.out.format("        %-9s|", "+");
-                else
+                } else {
                     System.out.format("        %-9s|", "-");
+                }
 
-                if (subtotal.get(TaskCharacteristics.csPassed))
+                if (subtotal.get(TaskCharacteristics.csPassed)) {
                     System.out.format("       %-8s|", "+");
-                else
+                }
+                else {
                     System.out.format("       %-8s|", "-");
+                }
 
-                if (subtotal.get(TaskCharacteristics.testsPassed))
+                if (subtotal.get(TaskCharacteristics.testsPassed)) {
                     System.out.format("    %-5s|", "+");
-                else
+                }
+                else {
                     System.out.format("    %-5s|", "-");
+                }
 
                 if (!firstIt) {
                     System.out.format("%-14s |", " ");
@@ -70,9 +77,9 @@ public class PrintResults {
                 System.out.print("\n");
             }
 
-            System.out.println("|-------------------------------" +
-                    "---------------------------------------------" +
-                    "-------------------------|");
+            System.out.println("|-------------------------------"
+                    + "---------------------------------------------"
+                    + "-------------------------|");
         }
     }
 
@@ -80,21 +87,21 @@ public class PrintResults {
      * header.
      */
     private void printHeader() {
-        System.out.println("|-------------------------" +
-                "-------------------------------------" +
-                "---------------------------------------|");
-        System.out.format( "|                        " +
-                        "                    Group  %s     " +
-                        "                                        |\n",
+        System.out.println("|-------------------------"
+                + "-------------------------------------"
+                + "---------------------------------------|");
+        System.out.format( "|                        "
+                        + "                    Group  %s     "
+                        + "                                        |\n",
                 config.getGroupNumber());
-        System.out.println("|------------------|--" +
-                "----------|---------|-----------------|" +
-                "---------------|---------|---------------|");
-        System.out.println("|   Group Member   |    Task  " +
-                "  |  Build  |  Documentation  |  " +
-                "Check Style  |  Tests  |  TOTAL SCORE  |");
-        System.out.println("|------------------|----------" +
-                "--|---------|-----------------|--" +
-                "-------------|---------|---------------|");
+        System.out.println("|------------------|--"
+                + "----------|---------|-----------------|"
+                + "---------------|---------|---------------|");
+        System.out.println("|   Group Member   |    Task  "
+                + "  |  Build  |  Documentation  |  "
+                + "Check Style  |  Tests  |  TOTAL SCORE  |");
+        System.out.println("|------------------|----------"
+                + "--|---------|-----------------|--"
+                + "-------------|---------|---------------|");
     }
 }

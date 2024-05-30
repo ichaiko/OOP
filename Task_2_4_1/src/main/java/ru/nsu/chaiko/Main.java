@@ -8,7 +8,6 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import ru.nsu.chaiko.dsl.Config;
 import ru.nsu.chaiko.dsl.GroupMember;
 import ru.nsu.chaiko.dsl.Task;
@@ -35,7 +34,8 @@ public class Main {
      * @throws IllegalAccessException    if an attempt to access a field or method is illegal
      * @throws NoSuchMethodException     if a method is not found
      */
-    public static void main(String[] args) throws IOException, NoSuchFieldException, InvocationTargetException,
+    public static void main(String[] args) throws IOException,
+            NoSuchFieldException, InvocationTargetException,
             InstantiationException, IllegalAccessException, NoSuchMethodException {
         Config config = new Config();
         config.configureFromFile(new File(Params.CONFIGPATH));
@@ -89,13 +89,15 @@ public class Main {
     public static void deleteDirectory(Path path) throws IOException {
         Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
             @Override
-            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+            public FileVisitResult visitFile(Path file,
+                                             BasicFileAttributes attrs) throws IOException {
                 Files.delete(file);
                 return FileVisitResult.CONTINUE;
             }
 
             @Override
-            public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+            public FileVisitResult postVisitDirectory(Path dir,
+                                                      IOException exc) throws IOException {
                 Files.delete(dir);
                 return FileVisitResult.CONTINUE;
             }

@@ -1,9 +1,8 @@
 package ru.nsu.chaiko.dsl;
 
+import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.List;
 
 /**
  * config class.

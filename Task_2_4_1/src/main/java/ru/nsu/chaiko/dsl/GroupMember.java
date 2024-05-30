@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
  * group member tasks.
  */
 @Data
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 public class GroupMember extends GroovyConfigurable {
     private String name;
     private String group;

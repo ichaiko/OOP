@@ -2,7 +2,6 @@ package ru.nsu.chaiko.git;
 
 import com.puppycrawl.tools.checkstyle.*;
 import com.puppycrawl.tools.checkstyle.api.AuditListener;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.nio.file.*;
@@ -14,7 +13,6 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.jgit.api.Git;
@@ -28,12 +26,11 @@ import org.gradle.tooling.ProjectConnection;
 import org.gradle.tooling.TestExecutionException;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
-
 import ru.nsu.chaiko.dsl.GroupMember;
 import ru.nsu.chaiko.dsl.Task;
 
-import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static com.puppycrawl.tools.checkstyle.api.AutomaticBean.OutputStreamOptions.NONE;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 
 /**
  * repo class.
@@ -132,8 +129,8 @@ public class GitRepository {
         checker.addListener(listener);
 
         List<File> javaFiles = Files.walk(Paths.get(String.format("%s/src",
-                                pathToRepo + "/" + taskName))
-                        , FOLLOW_LINKS)
+                                pathToRepo + "/" + taskName)),
+                        FOLLOW_LINKS)
                 .filter(Files::isRegularFile)
                 .filter(file -> file.toFile().getPath().endsWith(".java"))
                 .map(Path::toFile)
@@ -193,9 +190,11 @@ public class GitRepository {
         }
 
         try {
-            Path testResultsDir = Paths.get(rootDirPath, taskName, "build", "test-results", "test");
+            Path testResultsDir = Paths.get(rootDirPath, taskName,
+                    "build", "test-results", "test");
             if (!Files.exists(testResultsDir)) {
-                System.err.println("Test results directory does not exist: " + testResultsDir.toAbsolutePath());
+                System.err.println("Test results directory does not exist:"
+                        + " " + testResultsDir.toAbsolutePath());
                 return false;
             }
 
@@ -213,9 +212,12 @@ public class GitRepository {
                 NodeList testsuites = doc.getElementsByTagName("testsuite");
 
                 for (int i = 0; i < testsuites.getLength(); i++) {
-                    if (Integer.parseInt(testsuites.item(i).getAttributes().getNamedItem("failures").getNodeValue()) > 0 ||
-                            Integer.parseInt(testsuites.item(i).getAttributes().getNamedItem("errors").getNodeValue()) > 0) {
-                        System.err.println("Test failures or errors found in: " + resultFile.toAbsolutePath());
+                    if (Integer.parseInt(testsuites.item(i).getAttributes()
+                            .getNamedItem("failures").getNodeValue()) > 0 ||
+                            Integer.parseInt(testsuites.item(i).getAttributes()
+                                    .getNamedItem("errors").getNodeValue()) > 0) {
+                        System.err.println("Test failures or errors found in: "
+                                + resultFile.toAbsolutePath());
                         return false;
                     }
                 }
@@ -257,7 +259,8 @@ public class GitRepository {
     @SneakyThrows
     private LocalDate getMergeCommitDate(String taskBranchName) {
         try (Git git = Git.open(new File(rootDirPath))) {
-            Iterable<RevCommit> commits = git.log().add(git.getRepository().resolve("refs/heads/main")).call();
+            Iterable<RevCommit> commits = git.log().add(git.getRepository()
+                    .resolve("refs/heads/main")).call();
             for (RevCommit commit : commits) {
                 if (commit.getParents().length > 1) { // это коммит слияния
                     for (RevCommit parent : commit.getParents()) {
