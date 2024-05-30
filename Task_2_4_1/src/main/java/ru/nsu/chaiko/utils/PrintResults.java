@@ -12,7 +12,9 @@ public class PrintResults {
 
     /**
      * constr.
+     *
      * @param results res.
+     *
      * @param config conf.
      */
     public PrintResults(ArrayList<GroupMemberResult> results, Config config) {
@@ -42,8 +44,7 @@ public class PrintResults {
 
                 if (subtotal.get(TaskCharacteristics.isBuild)) {
                     System.out.format("    %-5s|", "+");
-                }
-                else {
+                } else {
                     System.out.format("    %-5s|", "-");
                 }
 
@@ -55,15 +56,13 @@ public class PrintResults {
 
                 if (subtotal.get(TaskCharacteristics.csPassed)) {
                     System.out.format("       %-8s|", "+");
-                }
-                else {
+                } else {
                     System.out.format("       %-8s|", "-");
                 }
 
                 if (subtotal.get(TaskCharacteristics.testsPassed)) {
                     System.out.format("    %-5s|", "+");
-                }
-                else {
+                } else {
                     System.out.format("    %-5s|", "-");
                 }
 
@@ -90,7 +89,7 @@ public class PrintResults {
         System.out.println("|-------------------------"
                 + "-------------------------------------"
                 + "---------------------------------------|");
-        System.out.format( "|                        "
+        System.out.format("|                        "
                         + "                    Group  %s     "
                         + "                                        |\n",
                 config.getGroupNumber());

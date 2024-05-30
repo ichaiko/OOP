@@ -1,5 +1,8 @@
 package ru.nsu.chaiko.git;
 
+import static com.puppycrawl.tools.checkstyle.api.AutomaticBean.OutputStreamOptions.NONE;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+
 import com.puppycrawl.tools.checkstyle.*;
 import com.puppycrawl.tools.checkstyle.api.AuditListener;
 import java.io.ByteArrayOutputStream;
@@ -28,9 +31,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import ru.nsu.chaiko.dsl.GroupMember;
 import ru.nsu.chaiko.dsl.Task;
-
-import static com.puppycrawl.tools.checkstyle.api.AutomaticBean.OutputStreamOptions.NONE;
-import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 
 /**
  * repo class.
@@ -213,8 +213,8 @@ public class GitRepository {
 
                 for (int i = 0; i < testsuites.getLength(); i++) {
                     if (Integer.parseInt(testsuites.item(i).getAttributes()
-                            .getNamedItem("failures").getNodeValue()) > 0 ||
-                            Integer.parseInt(testsuites.item(i).getAttributes()
+                            .getNamedItem("failures").getNodeValue()) > 0
+                            || Integer.parseInt(testsuites.item(i).getAttributes()
                                     .getNamedItem("errors").getNodeValue()) > 0) {
                         System.err.println("Test failures or errors found in: "
                                 + resultFile.toAbsolutePath());
