@@ -8,24 +8,26 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.gradle.org/gradle/libs-releases'
+    }
+    maven {
+        url "https://repository.aspose.com/repo/"
+    }
 }
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-
-    implementation 'org.codehaus.groovy:groovy-all:3.0.9'
-    implementation("org.gradle:gradle-tooling-api:7.3-20210825160000+0000")
-    runtimeOnly 'org.slf4j:slf4j-simple:1.7.10'
-    implementation("org.apache.directory.studio:org.apache.commons.io:2.4")
-    implementation("com.puppycrawl.tools:checkstyle:10.15.0")
-    implementation("org.eclipse.jgit:org.eclipse.jgit:6.9.0.202403050737-r")
-    implementation 'org.freemarker:freemarker:2.3.30'
-    testCompileOnly("org.projectlombok:lombok:1.18.20")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.20")
-    compileOnly("org.projectlombok:lombok:1.18.32")
-    annotationProcessor("org.projectlombok:lombok:1.18.20")
-    implementation("com.github.stefanbirkner:system-lambda:1.2.1")
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation(group: 'com.aspose', name: 'aspose-html', version: '23.11', classifier: 'jdk11')
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.21'
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
+    implementation 'org.gradle:gradle-tooling-api:7.4.2'
+    implementation 'com.puppycrawl.tools:checkstyle:10.16.0'
 }
 
 test {
@@ -45,5 +47,11 @@ javadoc {
 jacocoTestReport {
     reports {
         xml.required = true
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
     }
 }
