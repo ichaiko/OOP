@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.chaiko.distributedSystem"},{"l":"ru.nsu.chaiko.distributedSystem.net"},{"l":"ru.nsu.chaiko.distributedSystem.threads"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.chaiko.distributedsystem"},{"l":"ru.nsu.chaiko.distributedsystem.net"},{"l":"ru.nsu.chaiko.distributedsystem.threads"}];updateSearchResults();
