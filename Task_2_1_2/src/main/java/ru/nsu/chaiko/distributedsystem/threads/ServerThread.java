@@ -1,7 +1,7 @@
-package ru.nsu.chaiko.distributedSystem.threads;
+package ru.nsu.chaiko.distributedsystem.threads;
 
 import java.util.List;
-import ru.nsu.chaiko.distributedSystem.net.Server;
+import ru.nsu.chaiko.distributedsystem.net.Server;
 
 /**
  * Thread for servers.

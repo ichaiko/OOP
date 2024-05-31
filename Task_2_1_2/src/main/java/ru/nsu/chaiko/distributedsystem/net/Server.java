@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.distributedSystem.net;
+package ru.nsu.chaiko.distributedsystem.net;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.List;
 import java.util.Scanner;
-import ru.nsu.chaiko.distributedSystem.PrimeNumberCheck;
+import ru.nsu.chaiko.distributedsystem.PrimeNumberCheck;
 
 /**
  * Server class.

@@ -1,6 +1,6 @@
-package ru.nsu.chaiko.distributedSystem.threads;
+package ru.nsu.chaiko.distributedsystem.threads;
 
-import ru.nsu.chaiko.distributedSystem.ProblemClient;
+import ru.nsu.chaiko.distributedsystem.ProblemClient;
 
 /**
  * problemClientThread.

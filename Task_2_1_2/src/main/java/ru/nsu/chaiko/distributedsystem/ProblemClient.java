@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.distributedSystem;
+package ru.nsu.chaiko.distributedsystem;
 
 import java.io.IOException;
 import java.net.Socket;

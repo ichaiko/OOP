@@ -1,9 +1,9 @@
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.nsu.chaiko.distributedSystem.threads.ServerThread;
-import ru.nsu.chaiko.distributedSystem.threads.ClientThread;
-import ru.nsu.chaiko.distributedSystem.threads.ProblemClientThread;
+import ru.nsu.chaiko.distributedsystem.threads.ClientThread;
+import ru.nsu.chaiko.distributedsystem.threads.ProblemClientThread;
+import ru.nsu.chaiko.distributedsystem.threads.ServerThread;
 
 /**
  * Main test class.
@@ -97,7 +97,6 @@ public class MainTest {
         ProblemClientThread client1 = new ProblemClientThread();
         ProblemClientThread client2 = new ProblemClientThread();
         ProblemClientThread client3 = new ProblemClientThread();
-
         server.start();
         client1.start();
         client2.start();

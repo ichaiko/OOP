@@ -1,4 +1,4 @@
-package ru.nsu.chaiko.distributedSystem;
+package ru.nsu.chaiko.distributedsystem;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
